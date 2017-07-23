@@ -26,6 +26,11 @@ class AuthController extends Controller
      */
     public function redirectToProvider()
     {
+        /**
+         * Use this if you want to do the redirect portion from your Lumen App.  You can also do this portion from your frontend app... for example you
+         * could be using https://github.com/sahat/satellizer in angular for the redirect portion, and then have it CALLBACK to your lumen app.
+         * In other words, this "redirectToProvider" method is optional on the backend (you can do it from your frontend)
+         */
         return Socialite::driver('facebook')->stateless()->redirect();
     }
 
